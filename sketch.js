@@ -5,10 +5,14 @@ let cube
 let velX = 10
 
 function setup () {
-  createCanvas(800, 200)
+  createCanvas(document.body.offsetWidth, 200)
   frameRate(60)
   fill(255)
   noStroke()
+
+  window.addEventListener('resize', () => {
+    resizeCanvas(document.body.offsetWidth, 200)
+  })
 
   createElement('br')
   button30 = createButton('30 FPS')
